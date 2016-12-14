@@ -1,7 +1,8 @@
 ## JavaScript Design Patterns
 
 ### Namespace object
-Using an object gives structure to your code and it only adds one variable to the global scope.  This is helpful because it prevents duplicating variable names. Create an object literal and add all of your variables and functions as properties of that object.   
+An object can be used to organzie your code and avoid variable 
+collisions. Create an object literal and add all of your variables and functions as properties of that object.   
 
 ```js
 var Book = Book || {};
@@ -11,7 +12,7 @@ or
 
 var Book = {
 	isbn: 1234,
-	title: "JS",
+	title: "Hello JS",
 	author: "Alberta",
 	display: function() {
 		return "isbn: " + this.isbn + " title: " + this.title + " author: " + this.author
@@ -35,7 +36,7 @@ var Book = function(config) {
 ```
 
 ### Self-executing function
-Functions can be used to prevent variable collision in the global scope. Wrapping code in a function creates a scope for the containing variables so that they aren't added to the global scope.
+Functions can be used to prevent variable collision in the global namespace. Wrapping code in a function creates a scope for the containing variables so that they aren't added to the global scope.
 And having the function execute itself executes the code inside.
 
 ```js
@@ -44,12 +45,32 @@ And having the function execute itself executes the code inside.
  	console.log(isbn); 
 })();
 
-or you can use an anonymous function
+//or you can use an anonymous function
 
 (function(){
  	...
 })();
 ```
 
+## Functions as objects and classes
+A function can be designed as a real world object with state and 
+behavior.  The properites and methods are attached to the object
+using the `this` keyword. Furthermore, a function can be used as a
+blueprint for creating new objects by using the `new` keyword.
+
+```js
+//define the Book class
+var Book = function (isbn, title, author) {
+	this.isbn = isbn;
+	this.title = title;
+	this.author = author;
+	this.display = function () {
+		return "isbn: " + this.isbn + " title: " + this.title + " author: " + this.author
+	}
+}
+
+//create a new Book object
+var myBook = new Book(1234, "Hello JS", "Alberta");
+```
 
 
