@@ -52,11 +52,12 @@ And having the function execute itself executes the code inside.
 })();
 ```
 
-## Functions as objects and classes
+### Functions as objects and classes
 A function can be designed as a real world object with state and 
-behavior.  The properites and methods are attached to the object
+behavior. The properites and methods become publically available by
 using the `this` keyword. Furthermore, a function can be used as a
-blueprint for creating new objects by using the `new` keyword.
+blueprint for creating new objects by using the `new` keyword to
+instantiate it. 
 
 ```js
 //define the Book class
@@ -71,6 +72,62 @@ var Book = function (isbn, title, author) {
 
 //create a new Book object
 var myBook = new Book(1234, "Hello JS", "Alberta");
+
+//Alternatively, methods can be added to the objects prototype.
+
+Book.prototype.display = function () {
+	return "isbn: " + this.isbn + " title: " +
+            this.title + " author: " + this.author
+} 
+```
+
+### Revealing module
+A singleton implemented as a immediately executing function to 
+instantiate. This allows us to have private methods
+and attributes. Public methods are made available to use by
+returning an object.
+
+```js
+var Book = (function() { 
+
+  // Private attributes.
+   var isbn, title, author;
+
+
+	return {
+	  // Public methods.
+	  display: function() {
+	   	return "isbn: " + isbn + " title: " +
+            title + " author: " + author
+     },
+	   getIsbn: function() {
+	   	return isbn;
+	   },
+	   setIsbn: function(newIsbn) {
+		   isbn = newIsbn;
+	   },
+
+	   getTitle: function() {
+	   	return title;
+	   },
+	   setTitle: function(newTitle) {
+			title = newTitle || 'No title specified';
+	   },
+
+	   getAuthor: function() {
+	   	return author;
+	   },
+	   setAuthor: function(newAuthor) {
+	   	author = newAuthor || 'No author specified';
+	   }
+
+	}
+})();
+
+Book.setIsbn(1234)
+Book.setTitle("Hello JS");
+Book.setAuthor("Alberta");
+console.log(Book.display());
 ```
 
 
