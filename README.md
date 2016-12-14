@@ -2,7 +2,9 @@
 
 ### Namespace object
 An object can be used to organzie your code and avoid variable 
-collisions. Create an object literal and add all of your variables and functions as properties of that object.   
+collisions. Create an object literal and add all of your variables and functions as properties of that object.  
+
+Example:   
 
 ```js
 var Book = Book || {};
@@ -25,7 +27,9 @@ If you have a function that accepts multiple parameters, you can
 use one parameter that is an object.  The properties of the object
 will be the parameters.  The benefits of using an object as a 
 parameter is that parameters can be easily added and the order does
-not matter. 
+not matter.  
+
+Example: 
 
 ```js
 var Book = function(config) {
@@ -37,7 +41,9 @@ var Book = function(config) {
 
 ### Self-executing function
 Functions can be used to prevent variable collision in the global namespace. Wrapping code in a function creates a scope for the containing variables so that they aren't added to the global scope.
-And having the function execute itself executes the code inside.
+And having the function execute itself executes the code inside.  
+
+Example:
 
 ```js
 (function Book(){
@@ -57,7 +63,9 @@ A function can be designed as a real world object with state and
 behavior. The properites and methods become publically available by
 using the `this` keyword. Furthermore, a function can be used as a
 blueprint for creating new objects by using the `new` keyword to
-instantiate it. 
+instantiate it.  
+
+Example: 
 
 ```js
 //define the Book class
@@ -85,7 +93,9 @@ Book.prototype.display = function () {
 A singleton implemented as a immediately executing function to 
 instantiate. This allows us to have private methods
 and attributes. Public methods are made available to use by
-returning an object.
+returning an object.  
+
+Example: 
 
 ```js
 var Book = (function() { 
