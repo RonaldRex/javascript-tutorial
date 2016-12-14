@@ -1,10 +1,7 @@
 ## JavaScript Design Patterns
 
 ### Namespace object
-Using an object gives structure to your code and it only adds one variable to the global
-namespace.  This is helpful because it prevents duplicating
-variable names. Create an object literal and add all of your variables and 
-functions as properties of that object.   
+Using an object gives structure to your code and it only adds one variable to the global scope.  This is helpful because it prevents duplicating variable names. Create an object literal and add all of your variables and functions as properties of that object.   
 
 ```js
 var Book = Book || {};
@@ -17,8 +14,7 @@ var Book = {
 	title: "JS",
 	author: "Alberta",
 	display: function() {
-		return "isbn: " + this.isbn + " title: " +
-      this.title + " author: " + this.author
+		return "isbn: " + this.isbn + " title: " + this.title + " author: " + this.author
 	}
 }
 ```
@@ -38,7 +34,22 @@ var Book = function(config) {
 }
 ```
 
+### Self-executing function
+Functions can be used to prevent variable collision in the global scope. Wrapping code in a function creates a scope for the containing variables so that they aren't added to the global scope.
+And having the function execute itself executes the code inside.
 
+```js
+(function Book(){
+ 	var isbn = 1234;
+ 	console.log(isbn); 
+})();
+
+or you can use an anonymous function
+
+(function(){
+ 	...
+})();
+```
 
 
 
