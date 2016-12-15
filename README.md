@@ -58,12 +58,11 @@ Example:
 })();
 ```
 
-### Functions as objects and classes
+### Functions as constructors
 A function can be designed as a real world object with state and 
 behavior. The properites and methods become publically available by
-using the `this` keyword. Furthermore, a function can be used as a
-blueprint for creating new objects by using the `new` keyword to
-instantiate it.  
+using the `this` keyword. The function is a blueprint for creating new objects. Calling the function using the `new` keyword
+constructs a brand new object.
 
 Example: 
 
@@ -80,13 +79,26 @@ var Book = function (isbn, title, author) {
 
 //create a new Book object
 var myBook = new Book(1234, "Hello JS", "Alberta");
+```
 
-//Alternatively, methods can be added to the objects prototype.
+Alternatively, methods can be added to the object's prototype.
+This is a better practice because this way the method is not
+created again when a new object is created.  
 
+Example:
+
+```js
 Book.prototype.display = function () {
 	return "isbn: " + this.isbn + " title: " +
             this.title + " author: " + this.author
 } 
+
+or
+
+Book.prototype = {
+	display: function () {...},
+	checkIsbn: function (isbn) {...}
+}
 ```
 
 ### Revealing module
