@@ -1,4 +1,4 @@
-## Resources
+# Resources
 
 ### Tutorials
 [codecademy](https://www.codecademy.com/learn/javascript)  
@@ -23,7 +23,7 @@ Interactive exercises in functional JavaScript
 [tutsplus](http://code.tutsplus.com/tutorials/the-essentials-of-writing-high-quality-javascript--net-15145)
 
 ### Libraries/Frameworks
-[jQuery](https://jquery.com/)
+[jQuery](https://jquery.com/)  
 JavaScript library  
 
 [AngularJS](https://angularjs.org/)  

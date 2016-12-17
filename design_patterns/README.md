@@ -1,4 +1,4 @@
-## JavaScript Design Patterns
+# JavaScript Design Patterns
 
 ### Namespace object
 An object can be used to organzie your code and avoid variable 
