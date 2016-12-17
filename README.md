@@ -1,155 +1,61 @@
-## JavaScript Design Patterns
+### Tutorials
+[codecademy](https://www.codecademy.com/learn/javascript)  
+Absolute beginner lessons in JavaScript syntax
 
-### Namespace object
-An object can be used to organzie your code and avoid variable 
-collisions. Create an object literal and add all of your variables and functions as properties of that object.  
+[w3schools](http://www.w3schools.com/js/default.asp)  
+Reference for JavaScript syntax and methods
 
-Example:   
+[You Don't Know JS](https://github.com/getify/You-Dont-Know-JS)  
+Book on programming and advanced JavaScript topics
 
-```js
-var Book = Book || {};
-Book.display = function () {...};
+[ReactiveX](http://reactivex.io/learnrx/)  
+Interactive exercises in functional JavaScript
 
-or 
+### Style Guides
+[Douglas Crockford](http://javascript.crockford.com/code.html)    
 
-var Book = {
-	isbn: 1234,
-	title: "Hello JS",
-	author: "Alberta",
-	display: function() {
-		return "isbn: " + this.isbn + " title: " + this.title + " author: " + this.author
-	}
-}
-```
+[Isobar](http://isobar-idev.github.io/code-standards/#javascript_javascript) 
 
-### Configuration object
-If you have a function that accepts multiple parameters, you can
-use one parameter that is an object.  The properties of the object
-will be the parameters.  The benefits of using an object as a 
-parameter is that parameters can be easily added and the order does
-not matter.  
+[Google](https://google.github.io/styleguide/javascriptguide.xml)   
 
-Example: 
+[tutsplus](http://code.tutsplus.com/tutorials/the-essentials-of-writing-high-quality-javascript--net-15145)
 
-```js
-var Book = function(config) {
-	var isbn = config.isbn;
-	var title = config.title;
-	var author = config.author;
-}
-```
+### Libraries/Frameworks
+[jQuery](https://jquery.com/)
+JavaScript library  
 
-### Self-executing function
-Functions can be used to prevent variable collision in the global namespace. Wrapping code in a function creates a scope for the containing variables so that they aren't added to the global scope.
-And having the function execute itself executes the code inside.  
+[AngularJS](https://angularjs.org/)  
+Model-view-viewmodel framework
 
-Example:
+[React](https://facebook.github.io/react/)   
+Library for building user interfaces
 
-```js
-(function Book(){
- 	var isbn = 1234;
- 	console.log(isbn); 
-})();
+[Node.js](https://nodejs.org/en/)  
+Serverside JavaScript environment and package manager
 
-//or you can use an anonymous function
+### Testing
+[QUnit](http://qunitjs.com/)  
+Unit testing framework for JavaScript
 
-(function(){
- 	...
-})();
-```
+[Jasmine](http://jasmine.github.io/)  
+Behavior driven JavaScript testing  
 
-### Functions as constructors
-A function can be designed as a real world object with state and 
-behavior. The properites and methods become publically available by
-using the `this` keyword. The function is a blueprint for creating new objects. Calling the function using the `new` keyword
-constructs a brand new object.
+[Mocha](https://mochajs.org/)  
+JavaScript testing framework running on Node.js
 
-Example: 
+[Protractor](http://www.protractortest.org/#/)  
+End-to-end testing for Angular apps
 
-```js
-//define the Book class
-var Book = function (isbn, title, author) {
-	this.isbn = isbn;
-	this.title = title;
-	this.author = author;
-	this.display = function () {
-		return "isbn: " + this.isbn + " title: " + this.title + " author: " + this.author
-	}
-}
+### Tools
+[repl.it](https://repl.it/languages/javascript)  
+Web based code editor
 
-//create a new Book object
-var myBook = new Book(1234, "Hello JS", "Alberta");
-```
+[jshint](http://jshint.com/)  
+Code linter 
 
-Alternatively, methods can be added to the object's prototype.
-This is a better practice because this way the method is not
-created again when a new object is created.  
+[Grunt](http://gruntjs.com/)  
+JavaScript task runner
 
-Example:
-
-```js
-Book.prototype.display = function () {
-	return "isbn: " + this.isbn + " title: " +
-            this.title + " author: " + this.author
-} 
-
-or
-
-Book.prototype = {
-	display: function () {...},
-	checkIsbn: function (isbn) {...}
-}
-```
-
-### Revealing module
-A singleton implemented as a immediately executing function to 
-instantiate. This allows us to have private methods
-and attributes. Public methods are made available to use by
-returning an object.  
-
-Example: 
-
-```js
-var Book = (function() { 
-
-  // Private attributes.
-   var isbn, title, author;
-
-
-	return {
-	  // Public methods.
-	  display: function() {
-	   	return "isbn: " + isbn + " title: " +
-            title + " author: " + author
-     },
-	   getIsbn: function() {
-	   	return isbn;
-	   },
-	   setIsbn: function(newIsbn) {
-		   isbn = newIsbn;
-	   },
-
-	   getTitle: function() {
-	   	return title;
-	   },
-	   setTitle: function(newTitle) {
-			title = newTitle || 'No title specified';
-	   },
-
-	   getAuthor: function() {
-	   	return author;
-	   },
-	   setAuthor: function(newAuthor) {
-	   	author = newAuthor || 'No author specified';
-	   }
-
-	}
-})();
-
-Book.setIsbn(1234)
-Book.setTitle("Hello JS");
-Book.setAuthor("Alberta");
-console.log(Book.display());
-```
-
+[Karma](http://karma-runner.github.io/0.8/index.html)  
+Test runner for JavaScript
 
