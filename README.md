@@ -1,3 +1,5 @@
+## Resources
+
 ### Tutorials
 [codecademy](https://www.codecademy.com/learn/javascript)  
 Absolute beginner lessons in JavaScript syntax
