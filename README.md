@@ -61,3 +61,11 @@ JavaScript task runner
 [Karma](http://karma-runner.github.io/0.8/index.html)  
 Test runner for JavaScript
 
+## Learning Guide
+1. Learn CS and programming fundamentals (Karel/Reborg, YDKJS up and going, cs problems, testing)
+2. Lean advanced JavaScript (YDKJS scope and closures)
+3. Learn functional programming (reactive x)
+4. Learn object oriented programming (YDKJS this and object prototypes)
+5. Interpreters
+6. Web servers
+7. Node
