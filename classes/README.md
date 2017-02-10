@@ -1,8 +1,0 @@
-# Classes
-
-### Constructors
-
-### Inheritance
-
-### Polymorphism
-
