@@ -2,8 +2,8 @@
 
 ### Tutorials
 
-- [w3schools](http://www.w3schools.com/js/default.asp) - Reference for JavaScript syntax and methods
 - [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - JavaScript tutorials and reference
+- [Exploring ES6](http://exploringjs.com/es6.html) - Book on ES6 
 - [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS) - Book on programming and advanced JavaScript topics
 - [ReactiveX](http://reactivex.io/learnrx/) - Interactive exercises in functional JavaScript
 
